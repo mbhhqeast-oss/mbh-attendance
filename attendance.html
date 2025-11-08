@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MBH — Attendance</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    h2 { text-align:center; margin:10px 0; }
+    .status { text-align:center; font-weight:600; margin-top:10px; }
+    .btns { display:flex; justify-content:center; gap:10px; margin-top:16px; }
+    .records { max-width:450px; margin:20px auto; background:#fff; border-radius:8px; padding:12px; box-shadow:0 1px 4px rgba(0,0,0,0.1);}
+    .rec { font-size:13px; border-bottom:1px solid #ddd; padding:6px 0;}
+    .rec:last-child { border-bottom:none; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h2>Employee Attendance</h2>
+    <div class="status" id="status">Loading...</div>
+    <div class="btns">
+      <button id="checkIn">Check In</button>
+      <button id="checkOut">Check Out</button>
+    </div>
+
+    <div class="records">
+      <h3 style="margin-bottom:8px;">Recent Records</h3>
+      <div id="history"></div>
+    </div>
+
+    <button id="logout" style="background:#c33;color:#fff;margin-top:20px;">Logout</button>
+  </main>
+
+  <script src="attendance.js"></script>
+</body>
+</html>
