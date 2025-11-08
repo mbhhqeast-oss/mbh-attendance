@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MBH — Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .topbar{display:flex;justify-content:space-between;align-items:center;padding:8px 0;}
+    .card{max-width:1100px;margin:2rem auto;padding:16px;}
+    table{width:100%;border-collapse:collapse;margin-top:10px}
+    th,td{padding:8px;border-bottom:1px solid #eee;text-align:left;font-size:13px}
+    .small{font-size:13px;color:#444}
+    .summary{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+    .summary .box{flex:1 1 200px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.1);padding:12px}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="topbar">
+      <div>
+        <h2>Admin Dashboard</h2>
+        <div class="small" id="adminName"></div>
+      </div>
+      <button id="logout">Logout</button>
+    </div>
+
+    <section class="summary">
+      <div class="box"><h3>Total Employees</h3><div id="totalEmployees">--</div></div>
+      <div class="box"><h3>Active Stores</h3><div id="totalStores">--</div></div>
+      <div class="box"><h3>Leaves Approved (Month)</h3><div id="leavesApproved">--</div></div>
+      <div class="box"><h3>Payrolls Processed</h3><div id="payrollsProcessed">--</div></div>
+    </section>
+
+    <section>
+      <h3>Employee List</h3>
+      <table id="empTable">
+        <thead><tr><th>ID</th><th>Name</th><th>Store</th><th>Role</th><th>Status</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>
