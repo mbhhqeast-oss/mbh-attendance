@@ -1,13 +1,83 @@
-// copy-paste this into the Console on admin.html
-(function(){
-  const vals = {
-    totalEmployees: document.getElementById('totalEmployees')?.textContent?.trim(),
-    totalStores: document.getElementById('totalStores')?.textContent?.trim(),
-    leavesApproved: document.getElementById('leavesApproved')?.textContent?.trim(),
-    payrollsProcessed: document.getElementById('payrollsProcessed')?.textContent?.trim(),
-    empRowsShown: document.querySelectorAll('#empTable tbody tr').length,
-    consoleErrors: null
-  };
-  // capture any last console errors if available (best-effort)
-  console.log('ADMIN_SUMMARY_CHECK:', vals);
-})();
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MBH — Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: system-ui, Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .card {
+      max-width: 1100px;
+      margin: 2rem auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    .box {
+      flex: 1 1 200px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      padding: 16px;
+      text-align: center;
+    }
+    .box h3 {
+      margin: 0;
+      font-size: 15px;
+      color: #444;
+    }
+    .box div {
+      font-size: 24px;
+      margin-top: 8px;
+      font-weight: 600;
+      color: #0073aa;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+      font-size: 14px;
+    }
+    th {
+      background: #f8f8f8;
+      color: #444;
+    }
+    #logout {
+      background: #dc3545;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+    #logout:hover {
+      background: #c82333;
+    }
+  </style>
+</head>
+<body>
+  <m
