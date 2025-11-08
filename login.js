@@ -22,6 +22,9 @@ document.getElementById('loginForm').addEventListener('submit', async (ev) => {
       body: JSON.stringify({ action: 'login', employeeId, password })
     });
     const j = await res.json();
+    console.log('LOGIN_RESPONSE_DATA:', j);
+sessionStorage.setItem('last_login_resp', JSON.stringify(j));
+
 
     if (j && j.success) {
       const user = j.user || {};
