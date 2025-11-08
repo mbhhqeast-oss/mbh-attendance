@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MBH — Supervisor</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .topbar { display:flex; justify-content:space-between; align-items:center; padding:8px 0; }
+    .card { max-width:1000px; margin:2rem auto; padding:16px; }
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:8px;border-bottom:1px solid #eee;text-align:left;font-size:13px}
+    .btn-small{padding:6px 8px;border-radius:6px;border:none;cursor:pointer}
+    .btn-approve{background:#28a745;color:#fff}
+    .btn-reject{background:#dc3545;color:#fff}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="topbar">
+      <div><h2>Supervisor Console</h2><div class="small" id="supName"></div></div>
+      <div><button id="logout">Logout</button></div>
+    </div>
+
+    <section>
+      <h3>Pending Leave Requests</h3>
+      <table id="pendingLeavesTable">
+        <thead><tr><th>Leave ID</th><th>Employee</th><th>Type</th><th>Dates</th><th>Days</th><th>Reason</th><th>Action</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section style="margin-top:18px">
+      <h3>Missed Punches (today)</h3>
+      <table id="missedTable">
+        <thead><tr><th>Attendance ID</th><th>Employee</th><th>Check-In</th><th>Check-Out</th><th>Action</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="supervisor.js"></script>
+</body>
+</html>
